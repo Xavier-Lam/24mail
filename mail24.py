@@ -61,7 +61,7 @@ class EmailDataObject(object):
     def content(self):
         if not self._content and self._client:
             self.obj["CONTENT"] = self._content = \
-                self._client.req_api("mailinfo", dict(f=self._id))[1][0]["DATA"][1]
+                self._client.req_api("mailinfo", dict(f=self._id))[1][0]["DATA"][0]
         return self._content
 
     def email_name(self, name):
